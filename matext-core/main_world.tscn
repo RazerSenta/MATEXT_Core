@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://by2x1hfhckvfh"]
+
+[ext_resource type="Script" uid="uid://8p1iuk0b4yys" path="res://player.gd" id="1_3etub"]
+[ext_resource type="Script" uid="uid://ckjs6jw83jrou" path="res://generator.gd" id="2_whfra"]
+[ext_resource type="Script" uid="uid://brbe23ljro0dp" path="res://sell.gd" id="3_uue8y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gy3sr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lwx6"]
+albedo_color = Color(0, 0, 0, 1)
+grow_amount = -1.895
+
+[sub_resource type="BoxMesh" id="BoxMesh_dsnr4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_43o5b"]
+lightmap_size_hint = Vector2i(6, 8)
+size = Vector3(0.3, 0.2, 0.1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_43o5b"]
+left_to_right = 1.0
+size = Vector3(0.2, 0.25, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_whfra"]
+size = Vector3(0.1, 0.25, 0.1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3etub"]
+left_to_right = 0.0
+size = Vector3(0.2, 0.25, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3etub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxppu"]
+albedo_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gy3sr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1lwx6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dxppu"]
+
+[sub_resource type="Sky" id="Sky_gy3sr"]
+sky_material = SubResource("ProceduralSkyMaterial_dxppu")
+
+[sub_resource type="Environment" id="Environment_1lwx6"]
+background_mode = 2
+sky = SubResource("Sky_gy3sr")
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxppu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsnr4"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lf0gk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lf0gk"]
+albedo_color = Color(0, 0.99215686, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnaw2"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dsnr4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt6p6"]
+albedo_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uu1iw"]
+
+[node name="main_world" type="Node3D" unique_id=710543349]
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=698850509]
+script = ExtResource("1_3etub")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=2036445492]
+shape = SubResource("BoxShape3D_gy3sr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D" unique_id=1729619725]
+material_override = SubResource("StandardMaterial3D_1lwx6")
+mesh = SubResource("BoxMesh_dsnr4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D" unique_id=503866998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.5, -0.15)
+mesh = SubResource("BoxMesh_43o5b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D/MeshInstance3D" unique_id=515525922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.225, 0)
+mesh = SubResource("PrismMesh_43o5b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D/MeshInstance3D/MeshInstance3D" unique_id=765483696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0)
+mesh = SubResource("BoxMesh_whfra")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D" unique_id=960985450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.5, -0.15)
+mesh = SubResource("BoxMesh_43o5b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D/MeshInstance3D2" unique_id=627048807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.225, 0)
+mesh = SubResource("PrismMesh_3etub")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D/MeshInstance3D2/MeshInstance3D" unique_id=875582346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0)
+mesh = SubResource("BoxMesh_whfra")
+
+[node name="miaw" type="MeshInstance3D" parent="player/CollisionShape3D/MeshInstance3D" unique_id=1717377284]
+transform = Transform3D(1.1, 0, 0, 0, 0.1, 0, 0, 0, 1.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_3etub")
+
+[node name="cameraHandle" type="Node3D" parent="player" unique_id=506524850]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.2, -0.4)
+
+[node name="Camera3D" type="Camera3D" parent="player/cameraHandle" unique_id=1913149938]
+
+[node name="terminalDisplay" type="Label3D" parent="player/cameraHandle" unique_id=1795252119]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.05, 0.5, -1)
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="RayCast3D" type="RayCast3D" parent="player/cameraHandle" unique_id=1965959153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+target_position = Vector3(0, 0, -20)
+collide_with_areas = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player" unique_id=22412450]
+
+[node name="crosshair" type="CenterContainer" parent="player/CanvasLayer" unique_id=671259685]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="player/CanvasLayer/crosshair" unique_id=58249633]
+layout_mode = 2
+text = "+"
+
+[node name="map" type="Node3D" parent="." unique_id=1370806160]
+
+[node name="ground" type="MeshInstance3D" parent="map" unique_id=263181512]
+transform = Transform3D(20, 0, 0, 0, 0.5, 0, 0, 0, 20, 2, -2, -3)
+material_override = SubResource("StandardMaterial3D_dxppu")
+mesh = SubResource("BoxMesh_gy3sr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/ground" unique_id=28592671]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/ground/StaticBody3D" unique_id=2045039832]
+shape = SubResource("BoxShape3D_1lwx6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="map" unique_id=580891906]
+environment = SubResource("Environment_1lwx6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="map" unique_id=125879371]
+transform = Transform3D(-0.3420201, 0.6644629, -0.664463, 0, 0.7071067, 0.70710677, 0.93969256, 0.24184473, -0.24184474, 0, 0, 0)
+shadow_enabled = true
+
+[node name="generator" type="Area3D" parent="." unique_id=293780205]
+transform = Transform3D(0.875, -0.21650635, 0.4330127, 0.4330127, 0.75, -0.5, -0.21650635, 0.625, 0.75, -5, -1, -7)
+script = ExtResource("2_whfra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="generator" unique_id=1968943898]
+shape = SubResource("BoxShape3D_dxppu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="generator/CollisionShape3D" unique_id=1413854563]
+transform = Transform3D(0.99999994, -1.4901161e-08, 0, 2.9802322e-08, 1, 0, -4.4703484e-08, 0, 1.0000001, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_dsnr4")
+mesh = SubResource("BoxMesh_lf0gk")
+
+[node name="Timer" type="Timer" parent="generator" unique_id=1733549956]
+
+[node name="Label3D" type="Label3D" parent="generator" unique_id=762273105]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1, 1, 0)
+billboard = 1
+modulate = Color(1, 1, 0, 1)
+text = "GENERATOR"
+
+[node name="sell" type="Area3D" parent="." unique_id=364468581]
+transform = Transform3D(0.85022044, -0.29937464, 0.4330127, 0.5029035, 0.7050447, -0.5, -0.155606, 0.6428738, 0.75, 5, -1, -7)
+script = ExtResource("3_uue8y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sell" unique_id=582327005]
+shape = SubResource("BoxShape3D_dxppu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sell/CollisionShape3D" unique_id=1361987907]
+material_override = SubResource("StandardMaterial3D_lf0gk")
+mesh = SubResource("BoxMesh_lf0gk")
+
+[node name="Label3D" type="Label3D" parent="sell" unique_id=515457117]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1, 1, 0)
+billboard = 1
+modulate = Color(0, 1, 0, 1)
+text = "SELL"
+
+[node name="shop" type="Area3D" parent="." unique_id=343517613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shop" unique_id=859234030]
+shape = SubResource("BoxShape3D_dxppu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shop/CollisionShape3D" unique_id=1059065296]
+material_override = SubResource("StandardMaterial3D_cnaw2")
+mesh = SubResource("BoxMesh_lf0gk")
+
+[node name="box" type="RigidBody3D" parent="." unique_id=1069037416]
+transform = Transform3D(0.6138816, -0.32399184, 0.7198463, 0.7198463, 0.6040228, -0.34202012, -0.32399184, 0.72813857, 0.6040228, 3, 0, -3)
+gravity_scale = 0.0
+freeze_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box" unique_id=2060010097]
+shape = SubResource("BoxShape3D_dsnr4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="box/CollisionShape3D" unique_id=1773733785]
+material_override = SubResource("StandardMaterial3D_kt6p6")
+mesh = SubResource("BoxMesh_uu1iw")
+
+[node name="box2" type="RigidBody3D" parent="." unique_id=708419668]
+transform = Transform3D(0.6138816, -0.32399184, 0.7198463, 0.7198463, 0.6040228, -0.34202012, -0.32399184, 0.72813857, 0.6040228, -2.1621437, 0, 3.3463478)
+gravity_scale = 0.0
+freeze_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box2" unique_id=473227098]
+shape = SubResource("BoxShape3D_dsnr4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="box2/CollisionShape3D" unique_id=1900526243]
+material_override = SubResource("StandardMaterial3D_kt6p6")
+mesh = SubResource("BoxMesh_uu1iw")
+
+[connection signal="body_entered" from="generator" to="generator" method="_on_body_entered"]
+[connection signal="body_exited" from="generator" to="generator" method="_on_body_exited"]
+[connection signal="timeout" from="generator/Timer" to="generator" method="_on_timer_timeout"]
+[connection signal="body_entered" from="sell" to="sell" method="_on_body_entered"]
+[connection signal="body_exited" from="sell" to="sell" method="_on_body_exited"]
+[connection signal="body_entered" from="shop" to="shop" method="_on_body_entered"]
