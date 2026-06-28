@@ -17,12 +17,12 @@ func terminal(command, user):
 		elif command == 'down':
 			while user.inventory['money'] > id['status']['upgrade_costs']:
 				upgrade(user)
-				return 'back_to_status'
+			return 'back_to_status'
 func upgrade(user):
+	user.inventory['money'] -= id['status']['upgrade_costs']
 	id['status']['level'] += 1
 	id['status']['items_per_tick'] *= 2
 	id['status']['upgrade_costs'] *= 2
-	user.inventory['money'] -= id['status']['upgrade_costs']
 	var text_label = str(id['status']['name']) + "\nLvl: " + str(id['status']['level'])
 	label.text = text_label
 

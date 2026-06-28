@@ -1,13 +1,12 @@
 extends Area3D
 
 @onready var this = $CollisionShape3D/MeshInstance3D
-var status = {
-	'name' : 'SELL',
-	'sell_materials': 15}
+var id = {
+	'status' : {'name' : 'SELL', 'sell_materials': 15} }
 
 func sell(player):
-	while player.inventory['materials'] > status['sell_materials']:
-		player.inventory['materials'] -= status['sell_materials']
+	while player.inventory['materials'] > id['status']['sell_materials']:
+		player.inventory['materials'] -= id['status']['sell_materials']
 		player.inventory['money'] += 1
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
