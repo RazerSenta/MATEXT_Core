@@ -29,6 +29,9 @@ size = Vector3(0.2, 0.25, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3etub"]
 
+[sub_resource type="PrismMesh" id="PrismMesh_nf5u6"]
+left_to_right = -0.7
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxppu"]
 albedo_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
@@ -82,11 +85,11 @@ mesh = SubResource("BoxMesh_dsnr4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.5, -0.15)
 mesh = SubResource("BoxMesh_43o5b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/cat/EarRight" unique_id=515525922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.225, 0)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player/CollisionShape3D/cat/EarRight" unique_id=515525922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050000012, 0.22500002, 0)
 mesh = SubResource("PrismMesh_43o5b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/cat/EarRight/MeshInstance3D" unique_id=765483696]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/cat/EarRight/MeshInstance3D2" unique_id=765483696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0)
 mesh = SubResource("BoxMesh_whfra")
 
@@ -105,6 +108,10 @@ mesh = SubResource("BoxMesh_whfra")
 [node name="miaw" type="MeshInstance3D" parent="player/CollisionShape3D/cat" unique_id=1717377284]
 transform = Transform3D(1.1, 0, 0, 0, 0.1, 0, 0, 0, 1.1, 0, 0, 0)
 mesh = SubResource("BoxMesh_3etub")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D/cat/miaw" unique_id=1574894766]
+transform = Transform3D(-2.1855694e-08, 0, 1, 0, 4, 0, -0.5, 0, -4.371139e-08, 0, 2, -0.2)
+mesh = SubResource("PrismMesh_nf5u6")
 
 [node name="cameraHandle" type="Node3D" parent="player" unique_id=506524850]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.2, -0.4)
