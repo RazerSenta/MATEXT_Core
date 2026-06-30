@@ -2,14 +2,12 @@
 
 A futuristic tycoon, factory, survival, and sandbox game built with Godot Engine.
 
-## About
 
 ## Screenshot
 
 ![new player design](README-assets/New-Player-Design-1.png)
-![](README-assets/New-Player-Design-2.png)
 
-
+## About
 MATEXT Core is a personal project created while learning game development. The code and structure may not always be perfect, and some systems are still experimental.
 
 I'm still a beginner developer and continuously improving both the game and my programming skills. Suggestions, feedback, and ideas are always welcome.
